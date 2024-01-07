@@ -1,22 +1,50 @@
 ---
-import Badge from '../components/Badge.astro';
-import Layout from '../layouts/Layout.astro';
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import SocialMediaButtons from "../components/SocialMediaButtons.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import EmailIcon from "../components/icons/EmailIcon.astro";
 ---
 
-<Layout title="Welcome to my portfolio.">
+<Layout
+	title="Portfolio Pisani Valentin - Web Developer"
+	description="Contact Pisani Valentin to create your web application."
+>
 	<main>
 		<section class="mx-auto lg:w-[740px] py-20">
 			<h1 class="font-bold text-5xl flex flex-row gap-x-4 pb-4">
-				Hi! I'm Valentin Pisani <div class="flex justify-center items-center"><Badge>Ready to work.</Badge></div>
+				Hi! I'm Valentin Pisani <div
+					class="flex justify-center items-center"
+				>
+					<Badge>Ready to work.</Badge>
+				</div>
 			</h1>
 			<h2 class="text-xl opacity-80">
 				Student in Information Systems Engineering. I'm a Web Developer.
-				From  
-				<span class=" text-cyan-200">Buenos Aires, Argentina.</span>
-				Specialized in Java.
+				From
+				<span class="text-cyan-200">Buenos Aires, Argentina.</span>
 			</h2>
+			<ul class="flex gap-x-5 justify-evenly pt-4">
+				<li>
+					<SocialMediaButtons href="https://www.linkedin.com/in/valentin-pisani/">
+						<LinkedInIcon class="size-6" />
+						LinkedIn
+					</SocialMediaButtons>
+				</li>
+				<li>
+					<SocialMediaButtons href="https://github.com/PisaniValentin">
+						<GitHubIcon class="size-6" />
+						GitHub
+					</SocialMediaButtons>
+				</li>
+				<li>
+					<SocialMediaButtons href="mailto:valentin.pisani@hotmail.com">
+						<EmailIcon class="size-6" />
+						valentin.pisani@hotmail.com
+					</SocialMediaButtons>
+				</li>
+			</ul>
 		</section>
 	</main>
 </Layout>
-
-
