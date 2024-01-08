@@ -2,7 +2,8 @@
 const PROJECTS = [
     {
         title: "Homebanking",
-        description: "This is a web application that simulates online banking, allowing users to perform transactions, loans, and create credit and debit cards.",
+        description:
+            "This is a web application that simulates online banking, allowing users to perform transactions, loans, and create credit and debit cards.",
         link: "https://mindhubhomebanking.onrender.com/web/index.html",
         image: "/projects/mindhubPage.webp",
         github: "",
@@ -13,14 +14,14 @@ const PROJECTS = [
 
 {
     PROJECTS.map(({ title, description, image, link }) => (
-        <article class="flex flex-row justify-center p-3">
+        <article class="flex flex-row justify-start p-3">
             <section class="flex flex-col w-64 text-balance ">
                 <h3 class="text-3xl pb-2">{title}</h3>
                 <p class="text-xl opacity-70">{description}</p>
             </section>
             <section>
-                <a href={link} target="_blank">
-                    <img class=" w-96" src={image} alt={title} />
+                <a class="" href={link} target="_blank">
+                    <img class="w-96" src={image} alt={title} />
                 </a>
             </section>
         </article>
