@@ -34,7 +34,7 @@ const PROJECTS = [
             "This is a web application that simulates online banking, allowing users to perform transactions, loans, and create credit and debit cards. You can create a new user or log in with a existing one",
         link: "https://mindhubhomebanking.onrender.com/web/index.html",
         image: "/projects/mindhubPage.webp",
-        github: "",
+        github: "https://github.com/PisaniValentin/HomeBanking",
         tags: [TAGS.SPRINGBOOT, TAGS.VUE],
     },
     {
@@ -42,7 +42,7 @@ const PROJECTS = [
         description: "This is my portfolio",
         link: "#",
         image: "/projects/mindhubPage.webp",
-        github: "",
+        github: "https://github.com/PisaniValentin/Portfolio",
         tags: [TAGS.TAILWIND, TAGS.ASTRO],
     },
 ];
@@ -51,14 +51,14 @@ const PROJECTS = [
 {
     PROJECTS.map(({ title, description, image, link, tags, github }) => (
         <article class="flex flex-row justify-between pb-10">
-            <section class="flex flex-col w-64 text-pretty ">
-                <h3 class="text-3xl pb-2 pt-2 opacity-70">{title}</h3>
-                <p class="text-xl opacity-50">{description}</p>
+            <section class="flex flex-col w-80 text-pretty ">
+                <h3 class="text-3xl pb-2 pt-2 text-green-200/90">{title}</h3>
+                <p class="text-xl opacity-70 pb-2">{description}</p>
                 <a
                     class="flex gap-x-2 items-center border rounded-sm border-white w-fit p-2 hover:scale-110 transition"
-                    href={github}
+                    href={github} target="_blank"
                 >
-                    Go to <GitHubIcon class="size-5" />
+                    Go to: <GitHubIcon class="size-5" />
                 </a>
             </section>
             <section>

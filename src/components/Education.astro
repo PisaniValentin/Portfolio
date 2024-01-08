@@ -1,0 +1,35 @@
+---
+const EDUCATION = [
+    {
+        title: "Web Developer Java",
+        description:
+            "The accredited person is capable of developing applications in JAVA through the most commonly used frameworks, achieving the development and consumption of an API. Additionally, they can address a client's requirement, analyze it, work collaboratively, and carry out its development in a timely manner, adhering to best market practices and under agile methodologies.",
+        icon: "./education/developerWeb.png",
+        url: "https://www.credly.com/badges/2f39ebe9-1cf6-42b4-95f6-5e6b54268c17/public_url",
+    },
+    {
+        title: "Front End Web Developer",
+        description:
+            "The accredited person is capable of developing responsive web applications using HTML5, CSS3, Javascript, through the most commonly used frameworks, and integrating third-party APIs. Additionally, they can address a client's requirement, analyze it, work collaboratively, and carry out its development in a timely manner, adhering to best market practices and under agile methodologies.",
+        icon: "./education/developerFrontEnd.png",
+        url: "",
+    },
+];
+---
+
+{
+    EDUCATION.map(({ title, description, icon,url }) => (
+        <article class="flex justify-start pb-4">
+            <section class="flex items-center">
+                <a href="">
+                    <img class="size-60" src={icon} alt="" />
+                </a>
+            </section>
+            <section class="pl-10">
+                <h2 class="text-3xl text-green-200/90">{title}</h2>
+                <p class="text-xl w-96 pb-4 opacity-70">{description}</p>
+                <a class="flex w-fit border p-2 transition rounded-sm border-white hover:scale-110" href={url} target="_blank">Watch credential</a>
+            </section>
+        </article>
+    ))
+}
