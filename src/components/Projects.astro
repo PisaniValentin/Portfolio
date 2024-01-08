@@ -1,28 +1,78 @@
 ---
+import TaildwindIcon from "../components/icons/TailwindIcon.astro";
+import VueIcon from "../components/icons/VueIcon.astro";
+import SpringBootIcon from "../components/icons/SpringBootIcon.astro";
+import AstroIcon from "../components/icons/AstroIcon.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+
+const TAGS = {
+    TAILWIND: {
+        name: "Tailwind",
+        class: "",
+        icon: TaildwindIcon,
+    },
+    SPRINGBOOT: {
+        name: "SpringBoot",
+        class: "",
+        icon: SpringBootIcon,
+    },
+    VUE: {
+        name: "Vue",
+        class: "",
+        icon: VueIcon,
+    },
+    ASTRO: {
+        name: "Astro",
+        class: "",
+        icon: AstroIcon,
+    },
+};
 const PROJECTS = [
     {
         title: "Homebanking",
         description:
-            "This is a web application that simulates online banking, allowing users to perform transactions, loans, and create credit and debit cards.",
+            "This is a web application that simulates online banking, allowing users to perform transactions, loans, and create credit and debit cards. You can create a new user or log in with a existing one",
         link: "https://mindhubhomebanking.onrender.com/web/index.html",
         image: "/projects/mindhubPage.webp",
         github: "",
-        tags: "",
+        tags: [TAGS.SPRINGBOOT, TAGS.VUE],
+    },
+    {
+        title: "Portfolio",
+        description: "This is my portfolio",
+        link: "#",
+        image: "/projects/mindhubPage.webp",
+        github: "",
+        tags: [TAGS.TAILWIND, TAGS.ASTRO],
     },
 ];
 ---
 
 {
-    PROJECTS.map(({ title, description, image, link }) => (
-        <article class="flex flex-row justify-start p-3">
-            <section class="flex flex-col w-64 text-balance ">
-                <h3 class="text-3xl pb-2">{title}</h3>
-                <p class="text-xl opacity-70">{description}</p>
+    PROJECTS.map(({ title, description, image, link, tags, github }) => (
+        <article class="flex flex-row justify-between pb-10">
+            <section class="flex flex-col w-64 text-pretty ">
+                <h3 class="text-3xl pb-2 pt-2 opacity-70">{title}</h3>
+                <p class="text-xl opacity-50">{description}</p>
+                <a
+                    class="flex gap-x-2 items-center border rounded-sm border-white w-fit p-2 hover:scale-110 transition"
+                    href={github}
+                >
+                    Go to <GitHubIcon class="size-5" />
+                </a>
             </section>
             <section>
                 <a class="" href={link} target="_blank">
-                    <img class="w-96" src={image} alt={title} />
+                    <img class="w-96 pt-4" src={image} alt={title} />
                 </a>
+                <ul class="flex flex-row gap-x-4 pt-2">
+                    {tags.map((tag) => (
+                        <li class="flex gap-x-1 items-center">
+                            <tag.icon class="size-4" />
+                            {tag.name}
+                        </li>
+                    ))}
+                </ul>
             </section>
         </article>
     ))

@@ -7,6 +7,7 @@ import GitHubIcon from "../components/icons/GitHubIcon.astro";
 import EmailIcon from "../components/icons/EmailIcon.astro";
 import Projects from "../components/Projects.astro";
 import Code from "../components/icons/CodeIcon.astro";
+import EducationIcon from "../components/icons/EducationIcon.astro";
 ---
 
 <Layout
@@ -15,7 +16,7 @@ import Code from "../components/icons/CodeIcon.astro";
 >
 	<main>
 		<section
-			class="flex flex-col mx-auto lg:w-[740px] py-20 justify-center "
+			class="flex flex-col mx-auto lg:w-[740px] py-20 justify-center"
 		>
 			<h1 class="font-bold text-5xl flex flex-row gap-x-4 pb-4">
 				Hi! I'm Valentin Pisani <div
@@ -57,10 +58,16 @@ import Code from "../components/icons/CodeIcon.astro";
 			</ul>
 		</section>
 		<section>
-			<h2 class="flex text-4xl">
+			<h2 class="flex text-4xl pb-5">
 				<Code class="size-10" />Projects
 			</h2>
 			<Projects />
+		</section>
+		<section>
+			<h2 class="flex text-4xl pb-5 items-center">
+				<EducationIcon class="size-8" />
+				Education
+			</h2>
 		</section>
 	</main>
 </Layout>
