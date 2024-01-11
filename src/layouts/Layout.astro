@@ -19,10 +19,20 @@ const { description, title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<div
-			class="absolute top-0 z-[-2] min-h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(50,91,159,0.3),rgba(255,255,255,0))]"
-		>
+	<body class="text-black bg-white dark:bg-black dark:text-white">
+		<div class="fixed left-0 top-0 -z-10 h-full w-full">
+			<div
+				class="absolute top-0 z-[-2] min-h-screen w-full dark:bg-neutral-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(50,91,159,0.3),rgba(255,255,255,0))]"
+			>
+			</div>
+			<div
+				class="absolute inset-0 -z-10 min-h-screen w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"
+			>
+				<div
+					class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#C9C5D3,transparent)]"
+				>
+				</div>
+			</div>
 		</div>
 		<Header />
 		<slot />
@@ -30,8 +40,8 @@ const { description, title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		color-scheme: light dark;
 		width: 100%;
+		color-scheme: light dark;
 	}
 	html {
 		font-family: "Onest Variable", system-ui, sans-serif;
@@ -42,5 +52,10 @@ const { description, title } = Astro.props;
 		align-items: center;
 		min-height: 100vh;
 		background-color: #0a0a0a;
+	}
+	@media (prefers-color-scheme: dark) {
+		body {
+			color: rgba(255, 255, 255, 0.9);
+		}
 	}
 </style>

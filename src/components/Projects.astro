@@ -42,23 +42,23 @@ const PROJECTS = [
 
 {
     PROJECTS.map(({ title, description, image, link, tags, github }) => (
-        <article class="flex flex-col items-center md:items-start md:flex-row md:justify-between pb-10">
+        <article class="flex flex-col items-center sm:flex-row sm:justify-evenly pb-10 sm:p-10">
             <section class="flex flex-col w-80 text-pretty">
-                <h3 class="text-2xl md:text-3xl pb-2 pt-2 text-green-200/90">
+                <h3 class="text-2xl md:text-3xl pb-2 pt-2 text-orange-500 dark:text-green-200/90">
                     {title}
                 </h3>
                 <p class="text-xl md:text-xl opacity-70 pb-2">{description}</p>
                 <a
-                    class="flex gap-x-2 items-center border rounded-sm border-white w-fit p-2 hover:scale-110 transition"
+                    class="flex gap-x-2 items-center border rounded-sm border-black dark:border-white w-fit p-2 hover:scale-110 transition"
                     href={github}
                     target="_blank"
                 >
                     Go to: <GitHubIcon class="size-5" />
                 </a>
             </section>
-            <section>
+            <section class="lg:pl-6">
                 <a class="" href={link} target="_blank">
-                    <img class=" w-80 md:w-96 pt-4" src={image} alt={title} />
+                    <img class=" w-80 md:w-96 pt-4 " src={image} alt={title} />
                 </a>
                 <ul class="flex flex-row gap-x-4 pt-2">
                     {tags.map((tag) => (
